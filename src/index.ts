@@ -10,6 +10,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req: Request, res: Response) => {
+  res.send("Welcome to the Flight Status API");
+});
+
 app.get("/api/flight-status", async (req: Request, res: Response) => {
   const { schStTime, schEdTime, schLineType, schIOType, schAirCode, pageNo } =
     req.query;
